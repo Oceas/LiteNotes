@@ -1,5 +1,10 @@
+@extends('layouts.layout')
+@section('content')
+{{-- back button to single view --}}
+<a href="{{ route('notes.show', $note) }}" class="btn btn-primary">Back</a>
+
 {{-- edit note form --}}
-<form action="{{ route('notes.update', $note->id) }}" method="POST">
+<form action="{{ route('notes.update', $note) }}" method="POST">
     @csrf
     @method('PUT')
     <div class="form-group">
@@ -12,3 +17,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+@endsection

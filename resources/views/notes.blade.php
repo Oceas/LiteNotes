@@ -1,3 +1,7 @@
+{{-- user layout --}}
+@extends('layouts.layout')
+@section('content')
+
 {{-- display users name --}}
 <div class="container">
     <div class="row">
@@ -28,11 +32,10 @@
 @foreach($notes as $note)
     <div class="note">
         {{-- link to view note --}}
-        <a href="{{ route('notes.show', $note->id) }}">
+        <a href="{{ route('notes.show', $note ) }}">
             <h3>{{ $note->title }}</h3>
             <p>{{ $note->body }}</p>
         </a>
-
     </div>
 @endforeach
 <hr/>
@@ -49,3 +52,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+@endsection

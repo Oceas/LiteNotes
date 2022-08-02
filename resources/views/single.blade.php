@@ -1,3 +1,6 @@
+@extends('layouts.layout')
+@section('content')
+
 {{-- button to go back to other notes --}}
 <a href="{{ route('notes.index') }}" class="btn btn-primary">Back</a>
 
@@ -14,11 +17,12 @@
 
 <hr/>
 {{-- edit button --}}
-<a href="{{ route('notes.edit', $note->id) }}" class="btn btn-primary"><button type="submit" class="btn btn-danger">Edit</button></a>
+<a href="{{ route('notes.edit', $note) }}" class="btn btn-primary">Edit</a>
 
 {{-- button to delete post --}}
-<form action="{{ route('notes.destroy', $note->id) }}" method="POST">
+<form action="{{ route('notes.destroy', $note) }}" method="POST">
     @csrf
     @method('DELETE')
     <button type="submit" class="btn btn-danger">Delete</button>
 </form>
+@endsection
