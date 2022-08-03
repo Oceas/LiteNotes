@@ -1,7 +1,5 @@
 @extends('layouts.layout')
 @section('content')
-{{-- back button to single view --}}
-<a href="{{ route('notes.show', $note) }}" class="btn btn-primary">Back</a>
 
 {{-- edit note form --}}
 <form action="{{ route('notes.update', $note) }}" method="POST">

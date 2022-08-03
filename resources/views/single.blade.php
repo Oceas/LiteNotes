@@ -1,9 +1,6 @@
 @extends('layouts.layout')
 @section('content')
 
-{{-- button to go back to other notes --}}
-<a href="{{ route('notes.index') }}" class="btn btn-primary">Back</a>
-
 <hr/>
 {{-- display note --}}
 <div class="container">

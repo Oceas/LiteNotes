@@ -15,7 +15,14 @@ class NoteController extends Controller
     {
         $user = auth()->user();
         $notes = Note::all();
-        return view('notes', compact('user', 'notes'));
+        return view('notes.index', compact('user', 'notes'));
+    }
+
+    // function to return the form to create a new note
+    public function create()
+    {
+        $user = auth()->user();
+        return view('notes.create', compact('user'));
     }
 
     // POST function to create a new note
